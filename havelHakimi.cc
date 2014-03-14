@@ -32,26 +32,25 @@ int main() {
 	int ok = 1, core, ok2 = 1;;
 	while (ok == 1 && ok2 == 1) {
 		for (int index = 1; index <= dimSecventa; index++) {
-		
-		
-			bubblesort(secventa, dimSecventa);
-		
-			for (int index = 1; index <= dimSecventa; index++) {
-				secventa[index] = secventa[index] - 1;
-			}
-		
-			for (int index = 1; index <= dimSecventa; index++) {
-				if (secventa[index] != 0)
-					ok2 = 1;
-				else 
-					ok2 = 0;
-			}
-		
 			if (secventa[index] < 0) {
 				ok = 0;
 				break;
 			} 
 		}
+		
+		bubblesort(secventa, dimSecventa);
+		
+		for (int index = 1; index <= dimSecventa; index++) {
+			secventa[index] = secventa[index] - 1;
+		}
+		
+		for (int index = 1; index <= dimSecventa; index++) {
+		if (secventa[index] != 0)
+			ok2 = 1;
+		else 
+			ok2 = 0;
+		}
+		
 	}	
 	
 	if (ok == 0) 
